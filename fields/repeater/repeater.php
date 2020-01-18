@@ -19,7 +19,7 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
       $args = wp_parse_args( $this->field, array(
         'max'          => 0,
         'min'          => 0,
-        'button_title' => '<i class="fa fa-plus-circle"></i>',
+        'button_title' => '<i class="fa fa-plus-circle"></i>'
       ) );
 
       $fields    = $this->field['fields'];
