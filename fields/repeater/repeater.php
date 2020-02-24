@@ -23,7 +23,7 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
       ) );
 
       $fields    = $this->field['fields'];
-      $unique_id = ( ! empty( $this->unique ) ) ? $this->unique : $this->field['id'];
+      $unique_id = ( ! empty( $this->unique ) ) ? '[' . $this->field['id'] . ']' : $this->field['id'];
 
       if( $this->parent && preg_match( '/'. preg_quote( '['. $this->field['id'] .']' ) .'/', $this->parent ) ) {
 
@@ -53,7 +53,7 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
         echo '</div>';
         echo '</div>';
 
-        echo '<div class="csf-repeater-wrapper csf-data-wrapper" data-unique-id="'. $this->unique .'" data-field-id="['. $this->field['id'] .']" data-max="'. $args['max'] .'" data-min="'. $args['min'] .'">';
+        echo '<div class="csf-repeater-wrapper csf-data-wrapper" data-unique-id="'. $this->unique .'" data-field-id="'. $unique_id .'" data-max="'. $args['max'] .'" data-min="'. $args['min'] .'">';
 
         if( ! empty( $this->value ) && is_array( $this->value ) ) {
 
