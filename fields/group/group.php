@@ -26,6 +26,7 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
         'accordion_title_auto'   => true,
       ) );
 
+      $field_unique = ( ! empty( $this->unique ) ) ? '[' . $this->field['id'] . ']' : $this->field['id'];
       $title_prefix = ( ! empty( $args['accordion_title_prefix'] ) ) ? $args['accordion_title_prefix'] : '';
       $title_number = ( ! empty( $args['accordion_title_number'] ) ) ? true : false;
       $title_auto   = ( ! empty( $args['accordion_title_auto'] ) ) ? true : false;
@@ -67,7 +68,7 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
 
         echo '</div>';
 
-        echo '<div class="csf-cloneable-wrapper csf-data-wrapper" data-title-number="'. $title_number .'" data-unique-id="'. $this->unique .'" data-field-id="['. $this->field['id'] .']" data-max="'. $args['max'] .'" data-min="'. $args['min'] .'">';
+        echo '<div class="csf-cloneable-wrapper csf-data-wrapper" data-title-number="'. $title_number .'" data-unique-id="'. $this->unique .'" data-field-id="'. $field_unique .'" data-max="'. $args['max'] .'" data-min="'. $args['min'] .'">';
 
         if( ! empty( $this->value ) ) {
 
